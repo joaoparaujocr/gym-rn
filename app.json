@@ -1,4 +1,7 @@
 {
   "name": "ignitegym",
-  "slug": "ignitegym"
+  "slug": "ignitegym",
+  "plugins": [
+    "expo-font"
+  ]
 }
