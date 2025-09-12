@@ -3,8 +3,14 @@ import BackgroundImg from "@assets/background.png"
 import Logo from "@assets/logo.svg"
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
+import { useNavigation } from "@react-navigation/native";
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 
 export function SignUp() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+  const handleSignIn = () => navigation.navigate('signIn')
+
   return (
     <ScrollView
       contentContainerStyle={{
@@ -14,7 +20,6 @@ export function SignUp() {
     >
       <VStack
         flex={1}
-        bg="$gray700"
       >
         <Image
           source={BackgroundImg}
@@ -60,7 +65,7 @@ export function SignUp() {
             />
           </Center>
 
-          <Button title="Voltar para o login" variant="outline" />
+          <Button title="Voltar para o login" variant="outline" onPress={handleSignIn} />
         </VStack>
       </VStack>
     </ScrollView>
